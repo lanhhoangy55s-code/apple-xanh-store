@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Giỏ Hàng - iPhone Store</title>
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #fefefe;
+      color: #333;
+      margin: 0;
+    }
+    header, footer {
+      background-color: #e0f2f1;
+      text-align: center;
+      padding: 15px;
+    }
+    h2 {
+      text-align: center;
+      margin: 20px 0;
+      color: #00796b;
+    }
+    .cart {
+      width: 90%;
+      margin: auto;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    table, th, td {
+      border: 1px solid #ccc;
+    }
+    th, td {
+      padding: 15px;
+      text-align: center;
+    }
+    .btn {
+      background-color: #00796b;
+      color: white;
+      padding: 10px 20px;
+      text-decoration: none;
+      border-radius: 5px;
+      display: inline-block;
+      margin-top: 20px;
+    }
+    .btn-delete {
+      background-color: #e53935;
+      color: white;
+      border: none;
+      padding: 8px 12px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .btn-delete:hover {
+      background-color: #b71c1c;
+    }
+.apple-logo {
+  height: 1.5em;              /* Logo cao bằng chữ */
+  width: auto;              /* Tự động giữ tỉ lệ */
+  margin-left: 1px;         /* Cách chữ một chút */
+  vertical-align: -0.1em;   /* Căn chỉnh dọc với chữ */
+}
+
+  </style>
+</head>
+<body>
+  <header>
+   <h1>
+  <img src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg" 
+       alt="Apple Logo" 
+       class="apple-logo">
+  Apple Xanh
+</h1>
+    <nav>
+      <a href="index.html">Trang chủ</a> |
+      <a href="product.html">Sản phẩm</a> |
+      <a href="cart.html">Giỏ hàng</a> |
+      <a href="contact.html">Liên hệ</a>
+    </nav>
+  </header>
+
+  <h2>Giỏ hàng của bạn</h2>
+  <div class="cart">
+    <table>
+      <thead>
+        <tr>
+          <th>Sản phẩm</th>
+          <th>Số lượng</th>
+          <th>Giá</th>
+          <th>Thành tiền</th>
+          <th>Xóa</th>
+        </tr>
+      </thead>
+      <tbody id="cart-body">
+        <!-- Sản phẩm sẽ được thêm ở đây -->
+      </tbody>
+    </table>
+    <p style="text-align:right; font-weight:bold; margin-top: 10px;" id="cart-total">Tổng: 0đ</p>
+    <div style="text-align: right;">
+      <a href="#" class="btn">Tiến hành đặt hàng</a>
+    </div>
+  </div>
+
+ <script>
+function renderCart() {
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+    let cartBody = document.getElementById('cart-body');
+    let total = 0;
+    cartBody.innerHTML = "";
+
+    if (cart.length === 0) {
+        cartBody.innerHTML = `<tr><td colspan="5">Giỏ hàng trống</td></tr>`;
+        document.getElementById('cart-total').innerText = "Tổng: 0đ";
+        return;
+    }
+
+    cart.forEach((item, index) => {
+        let itemTotal = item.price * item.quantity;
+        total += itemTotal;
+
+        let row = document.createElement('tr');
+        row.innerHTML = `
+            <td>${item.name}</td>
+            <td>${item.quantity}</td>
+            <td>${item.price.toLocaleString()}đ</td>
+            <td>${itemTotal.toLocaleString()}đ</td>
+            <td><button onclick="removeItem(${index})">Xóa</button></td>
+        `;
+        cartBody.appendChild(row);
+    });
+
+    document.getElementById('cart-total').innerText = "Tổng: " + total.toLocaleString() + "đ";
+}
+
+function removeItem(index) {
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+    cart.splice(index, 1);
+    localStorage.setItem('cart', JSON.stringify(cart));
+    renderCart();
+}
+
+document.addEventListener('DOMContentLoaded', renderCart);
+</script>
+
+</body>
+</html>

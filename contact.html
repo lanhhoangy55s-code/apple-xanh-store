@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Liên Hệ - iPhone 15 Store</title>
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #fefefe;
+      color: #333;
+      margin: 0;
+    }
+    header, footer {
+      background-color: #e0f2f1;
+      text-align: center;
+      padding: 15px;
+    }
+    h2 {
+      text-align: center;
+      margin: 20px 0;
+      color: #00796b;
+    }
+    form {
+      width: 80%;
+      margin: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+    input, textarea {
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    button {
+      background-color: #00796b;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex: 1;
+}
+
+footer {
+    margin-top: auto;
+}
+
+  </style>
+</head>
+<body>
+  <header>
+    <h1>iPhone 15 Store</h1>
+    <nav>
+      <a href="index.html">Trang chủ</a> |
+      <a href="product.html">Sản phẩm</a> |
+      <a href="cart.html">Giỏ hàng</a> |
+      <a href="contact.html">Liên hệ</a>
+    </nav>
+  </header>
+
+  <h2>Liên hệ với chúng tôi</h2>
+  <form onsubmit="event.preventDefault(); alert('Chúng tôi đã nhận được thông tin liên hệ của bạn.');">
+    <input type="text" placeholder="Họ tên" required>
+    <input type="email" placeholder="Email" required>
+    <textarea rows="5" placeholder="Nội dung liên hệ" required></textarea>
+    <button type="submit">Gửi liên hệ</button>
+  </form>
+
+  <footer>
+    <p>&copy; 2025 Apple Xanh. All rights reserved.</p>
+  </footer>
+</body>
+</html>

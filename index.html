@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Apple Xanh</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <script src="js/main.js" defer></script>
+  <style>
+    html, body {
+      height: 100%;
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f9f9f9;
+      color: #333;
+      display: flex;
+      flex-direction: column;
+    }
+    header {
+      background: linear-gradient(to right, #e0f7fa, #b2ebf2);
+      padding: 20px 0;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
+    .container {
+      width: 90%;
+      margin: auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    h1 {
+      margin: 0;
+      font-size: 2em;
+      color: #00796b;
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+      padding: 0;
+      margin: 0;
+    }
+    nav a {
+      text-decoration: none;
+      color: #00796b;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+    nav a:hover {
+      color: #004d40;
+    }
+    .hero {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      padding: 60px 0;
+      background-color: #ffffff;
+    }
+    .hero-text {
+      flex: 1;
+      min-width: 280px;
+      animation: fadeInLeft 1s ease-in;
+    }
+    .hero-text h2 {
+      font-size: 2.5em;
+      margin-bottom: 10px;
+      color: #00796b;
+    }
+    .hero-text p {
+      font-size: 1.2em;
+      margin-bottom: 20px;
+    }
+    .btn {
+      background-color: #00796b;
+      color: #fff;
+      padding: 12px 25px;
+      border: none;
+      border-radius: 5px;
+      text-decoration: none;
+      transition: background-color 0.3s;
+    }
+    .btn:hover {
+      background-color: #004d40;
+    }
+    .hero-img {
+      flex: 1;
+      min-width: 280px;
+      display: flex;
+      justify-content: center;
+      animation: fadeInRight 1s ease-in;
+    }
+    .hero-img img {
+      width: 100%;
+      max-width: 400px;
+      border-radius: 15px;
+      box-shadow: 0 0 20px rgba(0, 150, 136, 0.3);
+      transition: transform 0.3s ease;
+    }
+    .hero-img img:hover {
+      transform: scale(1.05);
+    }
+    footer {
+      background-color: #e0f2f1;
+      text-align: center;
+      padding: 15px;
+      font-size: 0.9em;
+      color: #555;
+      margin-top: auto;
+    }
+    @keyframes fadeInLeft {
+      from { opacity: 0; transform: translateX(-50px); }
+      to { opacity: 1; transform: translateX(0); }
+    }
+    @keyframes fadeInRight {
+      from { opacity: 0; transform: translateX(50px); }
+      to { opacity: 1; transform: translateX(0); }
+    }
+    @media screen and (max-width: 768px) {
+      .hero {
+        flex-direction: column;
+        text-align: center;
+      }
+}
+.apple-logo {
+  height: 1.5em;              /* Logo cao bằng chữ */
+  width: auto;              /* Tự động giữ tỉ lệ */
+  margin-left: 1px;         /* Cách chữ một chút */
+  vertical-align: -0.1em;   /* Căn chỉnh dọc với chữ */
+}
+.custom-footer {
+  background: #e0f2f1; /* Xanh nhạt chủ đạo */
+  border-top: 3px solid #00796b; /* Xanh đậm */
+  color: #004d40; /* Xanh đậm */
+  font-size: 0.9em;
+  margin-top: 50px;
+}
+
+.footer-top {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 20px 10px;
+  flex-wrap: wrap;
+  text-align: center;
+}
+
+.footer-top .feature {
+  flex: 1;
+  min-width: 180px;
+  margin: 10px 0;
+}
+
+.footer-top .feature img {
+  height: 40px;
+  margin-bottom: 10px;
+  filter: grayscale(1) brightness(0.5) sepia(1) hue-rotate(140deg) saturate(2); /* chỉnh màu icon về tông xanh */
+}
+
+.footer-top .feature p {
+  color: #00695c;
+  font-weight: 500;
+}
+
+.footer-main {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 30px 10px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.footer-column {
+  flex: 1;
+  min-width: 200px;
+  margin-bottom: 20px;
+}
+
+.footer-column h4, .footer-column h5 {
+  color: #00796b;
+  margin-bottom: 10px;
+}
+
+.footer-column p {
+  margin: 6px 0;
+}
+
+.payment-icons {
+  margin-top: 10px;
+  width: 120px;
+}
+
+.contact-info p {
+  margin: 5px 0;
+}
+
+@media screen and (max-width: 768px) {
+  .footer-main {
+    flex-direction: column;
+  }
+  .footer-column {
+    margin-bottom: 20px;
+  }
+}
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap');
+
+.slogan {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 28px;
+  font-weight: 600;
+  color: #000000; /* Màu đen */
+  text-align: center;
+  margin-top: 20px;
+  letter-spacing: 0; /* Không giãn chữ */
+}
+
+    }
+.hero-text {
+  flex: 1;
+  min-width: 280px;
+  max-width: 500px;    /* Giới hạn độ rộng chữ */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 20px;
+}
+
+.hero-text h2 {
+  font-size: 2.5em;
+  margin-bottom: 0;
+}
+
+.hero-text .slogan {
+  font-size: 1.2em;
+  font-weight: 600;
+  margin: 0;
+  text-align: left;
+}
+.hero {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 0;
+  gap: 40px;  /* Giãn đều khoảng cách giữa chữ & hình */
+}
+
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+    <h1>
+  <img src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg" 
+       alt="Apple Logo" 
+       class="apple-logo">
+  Apple Xanh
+</h1>
+      <nav>
+        <ul>
+          <li><a href="index.html">Trang chủ</a></li>
+          <li><a href="product.html">Sản phẩm</a></li>
+          <li><a href="cart.html">Giỏ hàng</a></li>
+          <li><a href="contact.html">Liên hệ</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="container">
+      <div class="hero-text">
+        <h2>Khám phá iPhone </h2>
+        <h4 class="slogan">Công nghệ đỉnh cao<br> Trải nghiệm vượt trội</h4>
+
+        <a href="product.html" class="btn">Xem sản phẩm</a>
+      </div>
+      <div class="hero-img">
+       <img id="slideshow" src="https://cdn.tgdd.vn/Products/Images/42/303891/iphone-15-plus-xanh-la-128gb-thumb-600x600.jpg" alt="iPhone động" />
+      </div>
+    </div>
+  </section>
+
+  <footer class="custom-footer">
+  <div class="footer-top">
+    <div class="feature">
+      <img src="https://cdn-icons-png.flaticon.com/512/107/107831.png" alt="Giao hàng" />
+      <p>GIAO HÀNG TẬN NƠI MIỄN PHÍ</p>
+    </div>
+    <div class="feature">
+      <img src="https://cdn-icons-png.flaticon.com/512/753/753318.png" alt="Bảo hành" />
+      <p>BẢO HÀNH 1 ĐỔI 1 MIỄN PHÍ</p>
+    </div>
+    <div class="feature">
+      <img src="https://cdn-icons-png.flaticon.com/512/847/847969.png" alt="Hỗ trợ kỹ thuật" />
+      <p>HỖ TRỢ KỸ THUẬT TRỌN ĐỜI</p>
+    </div>
+    <div class="feature">
+      <img src="https://cdn-icons-png.flaticon.com/512/561/561127.png" alt="Thanh toán" />
+      <p>THANH TOÁN LINH HOẠT</p>
+    </div>
+  </div>
+
+  <div class="footer-links">
+  <a href="contact.html">Hỗ trợ khách hàng</a>
+  <span>|</span>
+  <a href="product.html">Chính sách bán hàng</a>
+</div>
+
+</footer>
+<script>
+  const images = [
+    "https://cdn.tgdd.vn/Products/Images/42/303891/iphone-15-plus-xanh-la-128gb-thumb-600x600.jpg",
+    "https://cdn.tgdd.vn/Products/Images/42/281570/iphone-15-hong-thumb-1-600x600.jpg",
+    "https://cdn.tgdd.vn/Products/Images/42/305658/iphone-15-pro-max-blue-thumbnew-600x600.jpg"
+  ];
+
+  let index = 0;
+  const imgElement = document.getElementById("slideshow");
+
+  setInterval(() => {
+    index = (index + 1) % images.length;
+    imgElement.src = images[index];
+  }, 3000); // đổi ảnh mỗi 3 giây
+</script>
+</body>
+</html>
